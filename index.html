@@ -7,10 +7,42 @@
 /*.external a { margin : 0 10px; }
 .external a.first { margin : 0 10px 0 0; }
 */
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #fafafa;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: black;
+}
 </style>
 
 
 </head><body style="background-color: rgb(255, 255, 255);margin-top:10;margin-left:30;margin-right:30;">
+
+
+
 
 
 
@@ -45,24 +77,30 @@
 
 
 
-
-
-
-
 </td>
     </tr>
   </tbody>
 </table>
 
-<h2>Research</h2>
-<h3>Research Interests</h3>
+
+<div class="topnav">
+  <a href="#research">Research Interests</a>
+  <a href="#papers">Publications</a>
+  <a href="#patents">Patents</a>
+  <a href="#awards">Awards</a>
+  <a href="#teaching">Teaching</a>
+  <a href="#people">Students</a>
+  <a href="#service">Service</a>
+</div>
+
+<h2 id='research'>Research Interests</h2>
 <ul>
-<li> Intelligent System Security, Machine Learning/Deep Learning Security,  AI for Security </li>
+<li> Intelligent System Security, Machine Learning/Deep Learning Security, AI for Security </li>
 
 
 </ul>
 
-<h3 name="papers">Publications</h3>
+<h2 id="papers">Publications</h2>
 
 For most recent publications, please see <a href="https://scholar.google.com/citations?user=lXL7QxMAAAAJ">my Google Scholar</a> page. <p>
 
@@ -359,7 +397,7 @@ Xudong Pan, <strong>Mi Zhang✉</strong>, Shouling Ji, Min Yang. <em>2020 IEEE S
 <p>
 </dd>
 
-<h3><a name="patent">Patents</a></h2>
+<h2><a id="patents">Patents</a></h2>
 <dl>
 
 <dt>A Method to Improve the Prediction Performance of Time Series Forecasting System. <br>Min Yang, <strong>Mi Zhang</strong>, Xiaoyu You. Invention Patent (No. CN114091752A), China, 2022.<br>
@@ -410,7 +448,7 @@ Xudong Pan, <strong>Mi Zhang✉</strong>, Shouling Ji, Min Yang. <em>2020 IEEE S
 
 
 
-<h2>Selected Awards and Honors</h2>
+<h2 id="awards">Selected Awards and Honors</h2>
 <ul>
 <li> Distinguished Paper Award Nomination, ACM CCS  (2020)
   <br><p> 
@@ -438,8 +476,6 @@ Xudong Pan, <strong>Mi Zhang✉</strong>, Shouling Ji, Min Yang. <em>2020 IEEE S
 </p>
 </li><li> Best Paper Award, WI/IAT, 2008.
   <br><p> 
-</p>
-<br><p>
 </p></li></ul>
 
 <!-- <ul style="list-style-type:none"> -->
@@ -448,17 +484,29 @@ Xudong Pan, <strong>Mi Zhang✉</strong>, Shouling Ji, Min Yang. <em>2020 IEEE S
 
 
 
-<h2>Teaching</h2>
+<h2 id='teaching'>Teaching</h2>
 <ul>
 <li>Practices in Intelligent System Security, Spring 2023, Fudan University
 <br><p> 
-</p></li><li>Academic English (Undergraduate), Spring 2021/2019
+</p></li><li>Academic English (Undergraduate), Spring 2021/2019, Fudan University
 <br><p>
 </li></ul>
 
 
+<h2 id='people'>Students</h2>
+<ul>
+<li>PhD Students: <em>Daizong Ding (2017-), Xiaoyu You (2017-), Xudong Pan (2018-), Qifan Xiao (2020-), Yifan Lu (2021-), Yuanmin Huang (2021-), Yining Wang (2022-), Feifei Li (2023-)</em>    
+<br><p> 
+</p></li><li>Master Students: 
+            <ul>
+              <li>Current: <em>Shengyao Zhang (2021-), Erling Jiang (2021-), Wenxuan Li (2022-), Junjie Sun (2022-), Yanghao Lv (2022-), Zecheng Gao (2022-)</em> </li>
+              <li>Graduated:  <em>Xucheng Zhang (2013-2016, Bytedance), Xiaoyang Ma (Bytedance), Chengchun Zhu (Bytedance), Ri Xu (Huawei), Ruozi Huang (2017-2020, Tencent), Duocai Wu (2018-2021, Tiansuan Lab, Ant Group), Hanrui Wang (2018-2021, Netease), Jiaming Zhu (2019-2021, Ant Group), Yifan Yan (2020-2022, Alibaba), Li Chi (2020-2022, Alibaba)</em> </li>
+            </ul>
+<br><p>
+</li></ul>
 
-<h2>Service & Outreach</h2>
+
+<h2 id='service'>Service & Outreach</h2>
 <ul>
 <li>Workshop Co-chair, The 17th ACM Conference on Recommender Systems (RecSys'23), Singapore, 18th-22nd September 2023.
 <br><p> 
