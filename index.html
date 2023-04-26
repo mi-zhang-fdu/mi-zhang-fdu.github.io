@@ -2,13 +2,50 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Mi Zhang's Home Page</title>
 <meta name="robots" content="index,follow">
 <meta name="keywords" content="Mi Zhang; 张谧; AI Security; recommender systems; social networks; computer vision; natural language processing; time series; knowledge graphs; autonomous driving systems; distributed systems; Fudan University">
+<script>
+  // Get the button:
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
 <style type="text/css">
   
 /*.external a { margin : 0 10px; }
 .external a.first { margin : 0 10px 0 0; }
 */
 
-
+#logo {
+    background-color: #fafafa;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    text-align: center;
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    color: black;
+    border-radius: 50%;
+    display: none;
+    cursor: pointer;
+}
+#logo:hover {
+    background-color:  #aaaaaa;
+}
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: #fafafa;
@@ -42,7 +79,7 @@
 </head><body style="background-color: rgb(255, 255, 255);margin-top:10;margin-left:30;margin-right:30;">
 
 
-
+  <div id="logo">Back to Top</div>
 
 
 
@@ -91,6 +128,7 @@
   <a href="#teaching">Teaching</a>
   <a href="#people">Students</a>
   <a href="#service">Service</a>
+  <a href="./index.chn.html">中文页面</a>
 </div>
 
 <h2 id='research'>Research Interests</h2>
@@ -474,7 +512,7 @@ Xudong Pan, <strong>Mi Zhang✉</strong>, Shouling Ji, Min Yang. <em>2020 IEEE S
 </li><li>Shanghai Youth May Fourth Medal (Collective), 2020
   <br><p> 
 </p>
-</li><li> Best Paper Award, WI/IAT, 2008.
+</li><li> Best Paper Award, IEEE/ACM WI/IAT, 2008.
   <br><p> 
 </p></li></ul>
 
@@ -512,13 +550,33 @@ Xudong Pan, <strong>Mi Zhang✉</strong>, Shouling Ji, Min Yang. <em>2020 IEEE S
 <br><p> 
 </p></li>
 </ul>
+<script>
+  // Get the button:
+  var oDiv = document.getElementById('logo');
+window.onscroll = function() {
+    oDiv.style.display = 'block';
+    var height = document.documentElement.scrollTop || document.body.scrollTop;
+    console.log(height);
+    if(height == 0) {
+        oDiv.style.display = 'none';
+    }
+}
+
+oDiv.onclick = function() {
+    var height = document.documentElement.scrollTop || document.body.scrollTop;
+    var t = setInterval(() => {
+        height -= 50;
+        if(height > 0) {
+            window.scrollTo(0,height);
+        }else {
+            window.scrollTo(0,0);
+            clearInterval(t);
+        }
+    }, 10);
+}
 
 
-
-
-
-
-
+</script>
 
 
 </body></html>
