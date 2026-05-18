@@ -62,6 +62,142 @@
 }
 </style>
 
+<style>
+/* 媒体报道横向图片墙 */
+.media-section {
+  width: 100%;
+  max-width: 100%;
+  margin: 12px 0 20px 0;
+}
+
+.media-section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 6px 0 10px 0;
+}
+
+.media-carousel-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.media-carousel {
+  display: flex;
+  gap: 0px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding: 4px 2px 8px 2px;
+  box-sizing: border-box;
+  scrollbar-width: none;
+}
+
+.media-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.media-col {
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: auto;
+  align-items: center;
+}
+
+.media-card {
+  display: block;
+  width: fit-content;
+  color: #000;
+  text-decoration: none;
+  border: none;
+  background: #fff;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.media-card:hover {
+  text-decoration: underline;
+}
+
+.media-card img {
+  display: block;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  background: #fff;
+  border-bottom: none;
+}
+
+.media-card-tall img {
+  height: 270px;
+}
+
+.media-card-short img {
+  height: 112px;
+}
+
+.media-caption {
+  min-height: 34px;
+  padding: 6px 6px 7px 6px;
+  font-size: 14px;
+  line-height: 1.25;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.media-nav {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 54px;
+  border: 1px solid #ccc;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #333;
+  font-size: 32px;
+  line-height: 46px;
+  cursor: pointer;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12);
+}
+
+.media-nav-left {
+  left: 4px;
+  display: none;
+}
+
+.media-nav-right {
+  right: 4px;
+}
+
+.media-nav:hover {
+  background: #f3f3f3;
+}
+
+/* 窄屏时一列稍微变窄，避免压迫正文 */
+@media (max-width: 700px) {
+  .media-col {
+    flex-basis: 170px;
+  }
+
+  .media-card-tall img {
+    height: 230px;
+  }
+
+  .media-card-short img {
+    height: 94px;
+  }
+
+  .media-caption {
+    font-size: 13px;
+  }
+}
+</style>
+
 
 </head><body style="background-color: rgb(255, 255, 255);margin-top:10;margin-left:30;margin-right:30;">
 
@@ -138,7 +274,7 @@
   <li>[2025/12/20] 受邀西安交通大学原点论坛，演讲主题为《大模型安全风险与治理》 [<a href="https://mp.weixin.qq.com/s/0ZgV8yPMLqBSfWpXCBijug">链接</a>]</li>
   <li>[2025/12/07] 当选为CCF网络与系统安全专业委员会首批执行委员</li>
   <li>[2025/10/25] 受邀CNCC 2025“大模型水印：人工智能生成内容溯源的机遇与挑战”论坛，演讲主题为《白泽智能解读大模型时代的水印技术》 [<a href="https://ccf.org.cn/cncc2025/schedule_d_4043">链接</a>]</li>
-  <li>[2025/10/24] 受邀CNCC 2025“浦江大讲堂：生成式AI安全治理——从数据到模型”论坛，担任Panel嘉宾</li>
+  <li>[2025/10/24] 受邀CNCC 2025“浦江大讲堂：生成式AI安全治理——从数据到模型”论坛，担任Panel嘉宾 [<a href="https://www.ccf.org.cn/Chapters/Local_Activities/Chapter_News/2025-10-27/850234.shtml">链接</a>]</li>
   <li>[2025/09/26] 受南都大数据研究院采访，关于“AI搜索引擎回答被植入广告”分享运作机制、潜在风险和前沿思考 [<a href="https://m.mp.oeeee.com/a/BAAFRD0000202509251127119.html">链接</a>]</li>
   <li>[2025/09/12] 受南都大数据研究院采访，分享治理AI虚假信息传播、复旦白泽智能提供有效方案 [<a href="https://m.mp.oeeee.com/a/BAAFRD0000202509131122895.html">链接</a>]</li>
   <li>[2025/09/12] 受邀Inclusion外滩大会“规范AI内容 共筑清朗生态”论坛，演讲主题为《大模型安全治理-JADE助力负责任AI》 [<a href="https://m.mp.oeeee.com/a/BAAFRD0000202509121122718.html?layer=3&share=chat&isndappinstalled=0">链接</a>]</li>
@@ -148,11 +284,165 @@
   <li>[2025/07/18] 受邀华为应用安全技术实验室先锋论坛，直播讲解大模型安全前世今生，介绍 JADE 系列研究，现场解答各类安全问题 </li>
   <li>[2025/06/18] 受邀华为-复旦workshop，作学术报告《多模态大模型的安全风险》 </li>
   <li>[2025/06/12] 受邀上海计算机学会与华为联合论坛，作学术报告《通用大模型的安全治理》</li>
-  <li>[2025/04/10] 受南都大数据研究院采访，分享大模型的安全评测与治理，指出大模型需像人一样学习安全本质 [<a href="https://m.mp.oeeee.com/a/BAAFRD0000202504091067733.html?layer=3&share=chat&isndappinstalled=0">链接</a>]</li>
+  <li>[2025/04/10] 受南都大数据研究院采访，分享大模型的安全评测与治理，指出大模型需像人一样学习安全本质 [<a href="https://m.mp.oeeee.com/a/BAAFRD0000202504091067733.html?layer=3&share=chat&isndappinstalled=0">南方都市报</a>] [<a href="https://weibo.com/1682207150/Pn4FYaXSI">南方日报</a>]</li>
   <li>[2024/09/19] 受邀APSARA云栖大会圆桌论坛“AI科技的责任与未来：伦理、安全与协同共治” [<a href="https://yunqi.aliyun.com/2024/solitary?spm=5176.29615464.J_7493026540.2.7aae4c84DbaRO4&agendaId=5449">回放</a>]</li>
   <li>[2024/01/10] 受邀阿里巴巴人工智能治理与可持续发展研究中心（AAIG）直播节目《追AI的人》第34期，分享主题为《当“巨兽”成为“宠物”：复旦白泽带你领略大模型安全伦理风险与治理》 [<a href="https://mp.weixin.qq.com/s/9wJ46y-k13JlAG8A1s11gw">链接</a>]</li>
   <li>[2023/12/27] 受邀阿里巴巴集团与中国电子技术标准化研究院联合举办的AI发展与治理创新研讨会，演讲主题为《通用人工智能风险与治理——从OpenAI Q*谈起》。媒体报道：[<a href="https://h.xinhuaxmt.com/vh512/share/11834906?d=134b43c">新华社</a>] [<a href="https://paper.people.com.cn/rmrbhwb/html/2024-01/05/content_26035329.htm">人民日报</a>] [<a href="https://tech.cnr.cn/techph/20231227/t20231227_526536789.shtml">央广网</a>] [<a href="https://it.gmw.cn/2023-12/27/content_37056703.htm">光明网</a>] [<a href="https://3w.huanqiu.com/a/c36dc8/4FvnVIbEDD0">环球网</a>] [<a href="https://finance.ifeng.com/c/8Vsrff36we9">凤凰网</a>] [<a href="https://m.mp.oeeee.com/a/BAAFRD000020231228893559.html">南方都市报</a>] [<a href="https://www.bjnews.com.cn/detail/1703685894169237.html">新京报</a>]</li>
 </ul>
+
+<div class="media-section">
+  <div class="media-section-title" style="padding-top: 20px;">媒体报道</div>
+
+  <div class="media-carousel-wrap">
+    <button class="media-nav media-nav-left" type="button" aria-label="向左翻动">‹</button>
+
+    <div class="media-carousel" id="mediaCarousel">
+
+      <div class="media-col">
+        <a class="media-card media-card-tall" href="https://m.mp.oeeee.com/a/BAAFRD0000202509121122718.html" target="_blank">
+          <img src="images/media/nandu-multi.png">
+          <div class="media-caption">南都新闻跟踪采访5次</div>
+        </a>
+      </div>
+
+      <div class="media-col">
+        <a class="media-card media-card-tall" href="https://h.xinhuaxmt.com/vh512/share/11834906?d=134b43c" target="_blank">
+          <img src="images/media/xinhua.png">
+          <div class="media-caption">新华社</div>
+        </a>
+      </div>
+
+      <div class="media-col">
+        <a class="media-card media-card-short" href="https://paper.people.com.cn/rmrbhwb/html/2024-01/05/content_26035329.htm" target="_blank">
+          <img src="images/media/people-daily.png">
+          <div class="media-caption">人民日报</div>
+        </a>
+
+        <a class="media-card media-card-short" href="https://www.news.cn/tech/20231228/a9aa777899984ab9832fc7c90096dbc8/c.html" target="_blank">
+          <img src="images/media/xinhua-net.png">
+          <div class="media-caption">新华网</div>
+        </a>
+      </div>
+
+      <div class="media-col">
+        <a class="media-card media-card-tall" href="https://tech.cnr.cn/techph/20231227/t20231227_526536789.shtml" target="_blank">
+          <img src="images/media/yangguang.png">
+          <div class="media-caption">央广网</div>
+        </a>
+      </div>
+
+      <div class="media-col">
+        <a class="media-card media-card-short" href="https://it.gmw.cn/2023-12/27/content_37056703.htm" target="_blank">
+          <img src="images/media/guangming.png">
+          <div class="media-caption">光明网</div>
+        </a>
+
+        <a class="media-card media-card-short" href="https://3w.huanqiu.com/a/c36dc8/4FvnVIbEDD0" target="_blank">
+          <img src="images/media/huanqiu.png">
+          <div class="media-caption">环球网</div>
+        </a>
+      </div>
+      
+      <div class="media-col">
+        <a class="media-card media-card-short" href="https://www.bjnews.com.cn/detail/1703685894169237.html" target="_blank">
+          <img src="images/media/xinjing.png">
+          <div class="media-caption">新京报</div>
+        </a>
+
+        <a class="media-card media-card-short" href="https://finance.ifeng.com/c/8Vsrff36we9" target="_blank">
+          <img src="images/media/fenghuang.png">
+          <div class="media-caption">凤凰网</div>
+        </a>
+      </div>
+
+      <div class="media-col">
+        <a class="media-card media-card-short" href="https://n.oeeee.com/nvideo/BAAFRD0000202509131122895" target="_blank">
+          <img src="images/media/nandu-N-video.png">
+          <div class="media-caption">南都N视频采访</div>
+        </a>
+
+        <a class="media-card media-card-short" href="https://weibo.com/1682207150/Pn4FYaXSI" target="_blank">
+          <img src="images/media/nanfang-daily.png">
+          <div class="media-caption">南方日报</div>
+        </a>
+      </div>
+
+    </div>
+
+    <button class="media-nav media-nav-right" type="button" aria-label="向右翻动">›</button>
+  </div>
+</div>
+
+<div class="media-section">
+  <div class="media-section-title">学术报告、行业论坛</div>
+
+  <div class="media-carousel-wrap">
+    <button class="media-nav media-nav-left" type="button" aria-label="向左翻动">‹</button>
+
+    <div class="media-carousel" id="talksCarousel" style="gap: 15px;">
+
+      <div class="media-col">
+        <a class="media-card media-card-tall" href="https://m.mp.oeeee.com/a/BAAFRD0000202509121122718.html" target="_blank">
+          <img src="images/talks/inclusion.jpg">
+          <div class="media-caption">2025 Inclusion外滩大会</div>
+        </a>
+      </div>
+
+      <div class="media-col">
+        <a class="media-card media-card-tall" href="https://ccf.org.cn/cncc2025/schedule_d_4043" target="_blank">
+          <img src="images/talks/cncc-talk.png">
+          <div class="media-caption">CNCC 2025 中国计算机大会</div>
+        </a>
+      </div>
+
+      <div class="media-col">
+        <a class="media-card media-card-tall" href="https://www.ccf.org.cn/Chapters/Local_Activities/Chapter_News/2025-10-27/850234.shtml" target="_blank">
+          <img src="images/talks/cncc-panel.png">
+          <div class="media-caption">CNCC 2025 圆桌讨论</div>
+        </a>
+      </div>
+
+      <div class="media-col">
+        <a class="media-card media-card-tall" href="https://www.ccf.org.cn/YOCSEF/xwdt/lt/2025-12-28/855681.shtml" target="_blank">
+          <img src="images/talks/yocsef.png">
+          <div class="media-caption">CCF YOCSEF 2025 年度论坛</div>
+        </a>
+      </div>
+
+      <div class="media-col">
+        <a class="media-card media-card-tall" href="https://mp.weixin.qq.com/s/0ZgV8yPMLqBSfWpXCBijug" target="_blank">
+          <img src="images/talks/xian-jiaotong.png">
+          <div class="media-caption">西安交通大学 原点论坛</div>
+        </a>
+      </div>
+
+      <div class="media-col">
+        <a class="media-card media-card-tall" href="https://mp.weixin.qq.com/s/9wJ46y-k13JlAG8A1s11gw" target="_blank">
+          <img src="images/talks/ai-lesson.png">
+          <div class="media-caption">阿里直播课《追AI的人》</div>
+        </a>
+      </div>
+
+      <div class="media-col">
+        <a class="media-card media-card-tall" href="https://yunqi.aliyun.com/2024/solitary?spm=5176.29615464.J_7493026540.2.7aae4c84DbaRO4&agendaId=5449" target="_blank">
+          <img src="images/talks/apsara.png">
+          <div class="media-caption">阿里APSARA云栖大会 2024</div>
+        </a>
+      </div>
+
+      <div class="media-col">
+        <a class="media-card media-card-tall" href="https://hub.baai.ac.cn/view/33941" target="_blank">
+          <img src="images/talks/aidev.png">
+          <div class="media-caption">AI发展与治理创新研讨会（阿里与电子四院联合举办）</div>
+        </a>
+      </div>
+      
+
+    </div>
+
+    <button class="media-nav media-nav-right" type="button" aria-label="向右翻动">›</button>
+  </div>
+</div>
 
 <h2 id='people'>学生</h2>
 <ul>
@@ -724,27 +1014,6 @@ Xudong Pan, <strong>Mi Zhang✉</strong>, Shouling Ji, Min Yang. <em>2020 IEEE S
 </dl>
 
 
-
-
-
-
-
-
-<!-- <ul style="list-style-type:none"> -->
-<!-- <li>See more info in. </li> -->
-<!-- </ul> -->
-
-
-
-<!-- <h2 id='teaching'>教学</h2>
-<ul>
-<li>智能系统安全实践, 2023学年春季学期, 复旦大学
-<br><p> 
-</p></li><li>学术英语（本科课程）, 2021/2019学年春季学期, 复旦大学
-<br><p>
-</li></ul> -->
-
-
 </body>
 
 <script>
@@ -774,4 +1043,61 @@ oDiv.onclick = function() {
 
 
 </script>
+
+<script>
+function initCarousel(carouselId) {
+  var carousel = document.getElementById(carouselId);
+  if (!carousel) return;
+
+  var wrap = carousel.parentElement;
+  var leftBtn = wrap.querySelector('.media-nav-left');
+  var rightBtn = wrap.querySelector('.media-nav-right');
+
+  function updateMediaNav() {
+    var maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+    var current = carousel.scrollLeft;
+
+    if (current <= 2) {
+      leftBtn.style.display = 'none';
+    } else {
+      leftBtn.style.display = 'block';
+    }
+
+    if (current >= maxScrollLeft - 2) {
+      rightBtn.style.display = 'none';
+    } else {
+      rightBtn.style.display = 'block';
+    }
+  }
+
+  function scrollMedia(direction) {
+    var step = Math.floor(carousel.clientWidth * 0.85);
+    carousel.scrollBy({
+      left: direction * step,
+      behavior: 'smooth'
+    });
+
+    setTimeout(updateMediaNav, 350);
+  }
+
+  leftBtn.addEventListener('click', function () {
+    scrollMedia(-1);
+  });
+
+  rightBtn.addEventListener('click', function () {
+    scrollMedia(1);
+  });
+
+  carousel.addEventListener('scroll', updateMediaNav);
+  window.addEventListener('resize', updateMediaNav);
+  window.addEventListener('load', updateMediaNav);
+
+  updateMediaNav();
+}
+
+// 初始化两个独立的 carousel
+initCarousel('mediaCarousel');
+initCarousel('talksCarousel');
+</script>
+
 </html>
